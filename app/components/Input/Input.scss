@@ -1,0 +1,14 @@
+@import 'mixins';
+
+.Input {
+  @include main-font;
+  width: 100%;
+  border: none;
+  border-bottom: solid 2px $color-grey-lightest;
+  transition: border-color .3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $color-dark;
+  }
+}

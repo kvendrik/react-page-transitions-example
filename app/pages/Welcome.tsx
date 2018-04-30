@@ -1,10 +1,31 @@
 import * as React from 'react';
 import Page from 'Components/Page';
-import {Link} from 'react-router-dom';
+import Input from 'Components/Input';
+import Button from 'Components/Button';
+import {Row} from 'Components/Grid';
+import Heading from 'Components/Heading';
 
-export default () => (
+function getOnSubmit(history: any) {
+  return (evt: any) => {
+    evt.preventDefault();
+    const query = evt.target.querySelector('input').value;
+    history.push(`/start/${encodeURI(query)}`);
+  };
+}
+
+export default ({history}: any) => (
   <Page>
-    <h1 style={{fontWeight: 700}}>Welcome! Let's do this.</h1>
-    <Link to="/start">Next step</Link>
+    <Row>
+      <Heading size="extra-large">Welcome! Let's do this.</Heading>
+      <Heading size="large" subdued>
+        Enter your Github username below.
+      </Heading>
+    </Row>
+    <form onSubmit={getOnSubmit(history)}>
+      <Row>
+        <Input placeholder="E.g. theradbrad" required />
+      </Row>
+      <Button type="submit">Next step</Button>
+    </form>
   </Page>
 );

@@ -28,7 +28,7 @@ const App = withRouter(({location}) => (
       >
         <Switch location={location}>
           <Route exact path="/" component={Welcome} />
-          <Route path="/start" component={GetStarted} />
+          <Route path="/start/:username" component={GetStarted} />
         </Switch>
       </CSSTransition>
     </TransitionGroup>

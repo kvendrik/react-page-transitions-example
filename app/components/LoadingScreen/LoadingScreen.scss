@@ -1,0 +1,47 @@
+@import 'variables';
+
+.LoadingScreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  background: white;
+
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+
+  transition: all .3s ease;
+}
+
+.LoadingScreenHidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+.Spinner {
+  width: 45px;
+  height: 45px;
+
+  margin: 0 auto;
+  animation: spin 1s ease infinite;
+  transform-origin: 50% 50%;
+
+  img {
+    width: 100%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
