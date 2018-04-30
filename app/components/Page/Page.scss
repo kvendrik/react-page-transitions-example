@@ -1,0 +1,7 @@
+@import 'variables';
+
+.Page {
+  font: $weight-primary $size-m $family-primary;
+  color: $color-dark;
+  position: absolute;
+}
