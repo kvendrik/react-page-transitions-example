@@ -25,15 +25,14 @@ export default class GetStarted extends React.Component<Props> {
       .then(res => {
         if (!res.ok) {
           return {
-            success: false,
-            status: res.status,
+            userFound: false,
           };
         }
 
         return res.json();
       })
-      .then(({success, status, name, avatar_url: avatarUrl}) => {
-        if (!success) {
+      .then(({userFound, name, avatar_url: avatarUrl}) => {
+        if (userFound === false) {
           this.setState({
             loading: false,
             userFound: false,
