@@ -5,6 +5,7 @@ const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
 const PATHS = {
   app: `${__dirname}/app`,
   public: `${__dirname}/docs`,
+  basename: '/react-page-transitions-example/',
 };
 
 module.exports = {
@@ -34,7 +35,7 @@ module.exports = {
   output: {
     path: PATHS.public,
     filename: 'bundle.js',
-    publicPath: '/react-page-transitions-example/',
+    publicPath: PATHS.basename,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -48,7 +49,7 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '[path][name].[ext]',
-          publicPath: '/react-page-transitions-example/',
+          publicPath: PATHS.basename,
         },
       },
       {

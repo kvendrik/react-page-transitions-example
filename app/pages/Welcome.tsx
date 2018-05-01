@@ -9,7 +9,7 @@ function getOnSubmit(history: any) {
   return (evt: any) => {
     evt.preventDefault();
     const query = evt.target.querySelector('input').value;
-    history.push(`/react-page-transitions-example/start/${encodeURI(query)}`);
+    history.push(`/start/${encodeURI(query)}`);
   };
 }
 
