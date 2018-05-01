@@ -27,8 +27,15 @@ const App = withRouter(({location}) => (
         timeout={500}
       >
         <Switch location={location}>
-          <Route exact path="/" component={Welcome} />
-          <Route path="/start/:username" component={GetStarted} />
+          <Route
+            exact
+            path="/react-page-transitions-example"
+            component={Welcome}
+          />
+          <Route
+            path="/react-page-transitions-example/start/:username"
+            component={GetStarted}
+          />
         </Switch>
       </CSSTransition>
     </TransitionGroup>
