@@ -1,12 +1,10 @@
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
 
 const PATHS = {
   app: `${__dirname}/app`,
-  public: `${__dirname}/public`,
+  public: __dirname,
 };
 
 module.exports = {
